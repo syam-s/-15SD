@@ -25,4 +25,3 @@ Students would create an app to enrich the experience of visitors to Stebbins, p
 2: Blockley for Robot Simulation 
 The C-STEM Center, in collaboration with our industry partners, has developed innovative educational computing using a user friendly C/C++ interpreter Ch and robotics technologies for K-14 hands-on learning.
 and that's my list of 4. I need to poke around a bit within the hour for the other 2 I think I could be interested in.
-Also, is everyone here allright with github? that seems the way to go with tracking our code and such.
