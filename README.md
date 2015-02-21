@@ -13,7 +13,9 @@ I'll get my code that I've been experimenting with up by Sunday night-- comments
 As a group log we've got:
 
 Amanda: Will run imellipse on half of image sequence E272K03A to find diameter of droplet. (Matlab)  
+
 Willie: Will run on other half. (Matlab)
+
 Rylan: Wrote initial script. (Matlab)
 
 -Ramya 
