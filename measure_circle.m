@@ -36,5 +36,11 @@ for i = first_image:last_image
     h = imellipse;
     wait(h);
     position = getPosition(h);
+    width = position(3);
+    height = position(4);
+    centerx = position(1) + position(3)/2;
+    centery = position(2) + position(4)/2;
+    radius = width/2;
+    Circle_Measurement(i+1,:,:) = [centerx centery radius];
     close all;
 end
