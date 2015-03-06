@@ -27,7 +27,9 @@ files = dir(strcat(directory,'//','*',file_extension));
 % Column 2 will be the y-coordinate of the estimated circle.
 % Column 3 will be the radius of the estimated circle.
 % All values are initialized to NaN (Not a Number).
-Circle_Measurement = nan(length(files),3);
+if(exist('Circle_Measurement') == 0)
+    Circle_Measurement = nan(length(files),3);
+end
 %STEP 4:
 %Open the image and draw a circle where the droplet is.
 for i = first_image:last_image
