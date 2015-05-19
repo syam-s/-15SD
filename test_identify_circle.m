@@ -8,11 +8,11 @@
 %Uncomment this later
 %directory = input('Would you kindly enter a file path? ','s');
 %Remove this later
-directory = 'E272K03A';
+%directory = 'E272K03A';
 
 %Prompt user for first image to start the analysis
 %first_image = input('Would you kindly enter the first image in the sequence? ');
-first_image = 260;
+first_image = 1;
 
 %Prompt user for the file extension.  Default file extension is .tif
 file_extension = '.tif';
@@ -23,7 +23,9 @@ file_extension = '.tif';
 
 %STEP 2:
 %Open the directory containing all the image files
-files = dir(strcat(directory,'//','*',file_extension));
+%files = dir(strcat(directory,'//','*',file_extension));
+%unix version
+files = dir('/home/rylan/Documents/193/simulated images/Image Sequence 4/*.tif');
 
 %STEP 3:
 %Create a number-of-images-by-3 matrix. For each image, this matrix
@@ -32,112 +34,138 @@ files = dir(strcat(directory,'//','*',file_extension));
 %   Column 2 will be the y-coordinate of the estimated circle.
 %   Column 3 will be the radius of the estimated circle.
 %   All values are initialized to NaN (Not a Number).
-Circle_Estimation = nan(length(files),3);
+Circle_Estimation = nan(length(files),4);
 
 %STEP 4:
-%To find circles faster, the algorithm takes a lower bound
-%and an upper bound to limit the number of possible circles. We enlist the
-%user to help us generate these boundaries.
+%To find potential circles, the Circular Hough Transform requires a lower bound
+%and an upper bound to limit the number of possible circles.  We initialize
+%the lower bound to a high estimate and iteratively decrease the lower
+%bound until we catch a good initial value.  We do this twice, once for the
+%initial image in the sequence and again for the final image in the
+%sequence.
 
-%Show user the first image in the sequence. Prompt the user to inscribe the
-%droplet in a square.  Assume that the "square" is imperfectly drawn.
-%Assume further that
-%   1. Upper radius bound is 1.10 of half the "square's" longest dimension
-%   2. Lower radius bound is 0.85 of half the "square's" longest dimension
-disp('Please inscribe the droplet in a square.');
-imshow('E272K03A//E272K03A_00260.tif');
-rect = getrect;
-initial_upper_radius_bound = 1.10*max([rect(3) rect(4)])/2;
-initial_lower_radius_bound = 0.85*max([rect(3) rect(4)])/2;
+centersDark = [];
+radiiDark = [];
+metric = [];
 
-%Show user the last image in the sequence. Prompt the user to inscribe the
-%droplet in a square.  Assume that the "square" is imperfectly drawn.
-%Assume further that
-%   1. Upper radius bound is 1.10 of half the "square's" longest dimension
-%   2. Lower radius bound is 0.85 of half the "square's" longest dimension
-disp('Please inscribe the droplet in a square.');
-imshow('E272K03A//E272K03A_01364.tif');
-rect = getrect;
-close figure 1
-final_upper_radius_bound = 1.10*max([rect(3) rect(4)])/2;
-final_lower_radius_bound = 0.85*max([rect(3) rect(4)])/2;
+%Calculate radius of first image
+%image = imread('E272K03A//E272K03A_00134.tif');
+image = rgb2gray(imread('/home/rylan/Documents/193/simulated images/Image Sequence 4/frame-0001.tif'));
+initialRadiusLowerBound = 100;
 
-%With each subsequent image in the sequence, the radius should shrink by a
-%small but not insignificant amount.  We assume that the radius will
-%decrease linearly between the initial bounds and the final bounds.
-lower_bound_reduction_constant = ...
-    (final_lower_radius_bound - initial_lower_radius_bound)/length(files);
-upper_bound_reduction_constant = ...
-    (final_upper_radius_bound - initial_upper_radius_bound)/length(files);
+while (isempty(centersDark))
+    initialRadiusLowerBound = initialRadiusLowerBound - 10;
+    
+    if (initialRadiusLowerBound <= 10)
+        initialRadiusLowerBound = 1;
+        break;
+    end
+    
+    [centersDark, radiiDark, metric] = imfindcircles(image,...,
+        [initialRadiusLowerBound (initialRadiusLowerBound+15)],'ObjectPolarity','dark','Sensitivity',0.95);
 
-%Set the initial bounds to the variable bounds
-lower_radius_bound = final_lower_radius_bound;
-upper_radius_bound = final_upper_radius_bound;
+    %if (isempty(centersDark))
+    %    [centersDark, radiiDark, metric] = imfindcircles(image,...,
+    %    [initialRadiusLowerBound (initialRadiusLowerBound+15)],'ObjectPolarity',...
+    %    'dark','Sensitivity',0.95,'EdgeThreshold',0);
+    %end
 
+end
+disp(initialRadiusLowerBound);
+
+%Calculate radius of last image
+%image = imread('E272K03A//E272K03A_01364.tif');
+image = imread('/home/rylan/Documents/193/simulated images/Image Sequence 4/frame-0300.tif');
+finalRadiusLowerBound = 100;
+centersDark = [];
+while (isempty(centersDark))
+    finalRadiusLowerBound = finalRadiusLowerBound - 10;
+    
+    if (finalRadiusLowerBound <= 10)
+        finalRadiusLowerBound = 1;
+        break;
+    end
+    
+    [centersDark, radiiDark, metric] = imfindcircles(image,...,
+        [finalRadiusLowerBound (finalRadiusLowerBound+15)],'ObjectPolarity','dark','Sensitivity',0.95);
+end
+disp(finalRadiusLowerBound);
+
+if (finalRadiusLowerBound == 5)
+    disp('NOTE: Droplet size may be too small to detect towards the end of the image sequence');
+end
+
+
+temp = zeros(length(files),1);
 
 %Step 5:
-%Iterate through every file in the directory, starting with the user
-%selected image.  Use imfindcircles to calculate possible circles.  We
-%assume that the most likely circle is the correct circle.
+%Iterate through each file in the directory, starting with the final image.
 count = length(files);
+estimatedRadiusLowerBound = finalRadiusLowerBound;
 for file = flipud(files)'
-    
-    %Skip all images before the user selected first image
-    %if(count < first_image)
-    %    count = count + 1;
+    %if (count > 300)
+    %    count = count - 1;
     %    continue;
     %end
-    
     %Open image
-    image = imread(strcat(directory,'//',file.name));
     
-    %Calculate bounds for the particular image
-    lower_radius_bound = lower_radius_bound - lower_bound_reduction_constant;
-    upper_radius_bound = upper_radius_bound - upper_bound_reduction_constant;
-    
-    %CHANGE THIS TO THE SQUARE OF THE RADIUS REDUCES LINEAR
-    
+    %image = imread(strcat(directory,'//',file.name));
+    image = rgb2gray(imread(strcat('/home/rylan/Documents/193/simulated images/Image Sequence 4/',file.name)));
+     
     %Use imfindcircles to find potential circles for the particular image
     [centersDark, radiiDark, metric] = imfindcircles(image,...
-        [floor(lower_radius_bound) ceil(upper_radius_bound)],'ObjectPolarity','dark',...
-        'Sensitivity',0.99,'Method','twostage','EdgeThreshold',0.1);
+        [estimatedRadiusLowerBound (estimatedRadiusLowerBound+15)],...
+        'ObjectPolarity','dark','Sensitivity',0.95);
     
-    %If the current image is the first image in the sequence, assume that
-    %the correct circle is the circle ranked most likely by imfindcircles.
-    if(count == length(files))
-        Circle_Estimation(count,:) = [centersDark(1,1:2) radiiDark(1,1)];
+    Circle_Estimation(count,4) = estimatedRadiusLowerBound;
+    %Describe what's happening here
+    if(~isempty(centersDark))
+        Circle_Estimation(count,1:3) = [centersDark(1,1:2) radiiDark(1,1)];
         count = count - 1;
+        
+        estimatedRadiusLowerBound = floor(radiiDark(1,1)) - 5;
+        if (estimatedRadiusLowerBound <= 0)
+            estimatedRadiusLowerBound = 1;
+        end
+        
         continue;
     end
     
     %If the current image is subsequent to the first image in the sequence,
     %assume that the correct circle is the circle with center closest to
     %the previous circle's center.
-    if(count < length(files))
-        xhat = Circle_Estimation(count+1,1);
-        yhat = Circle_Estimation(count+1,2);
-        rhat = Circle_Estimation(count+1,3);
-        
-        [~, pos] = min(abs(centersDark(:,1)-xhat) + ...
-            abs(centersDark(:,2)-yhat) + (radiiDark(:)-rhat));
-        
-        Circle_Estimation(count,:) = [centersDark(pos,1:2) radiiDark(pos,1)];
-        
-    end
+    % if(count < length(files))
+    %     disp(count);
+    %     xhat = Circle_Estimation(count+1,1);
+    %     yhat = Circle_Estimation(count+1,2);
+    %     rhat = Circle_Estimation(count+1,3);
+         
+    %     [~, pos] = min(abs(centersDark(:,1)-xhat) + ...
+    %         abs(centersDark(:,2)-yhat) + (radiiDark(:)-rhat));
+         
+    %     Circle_Estimation(count,:) = [centersDark(1,1:2) radiiDark(1,1)];
+         
+     %end
     
     count = count - 1;
 end
 
-%STEP 6:
+%Step 6:
+%Provde the user with a way to save results as CSV
+%save_results = input('Would you like to save all the visualized images? (Y or N): ');
+%if (save_results == 'Y')
+%    results_file = input('Where would you like to save the radiuses to?' );
+%    csvwrite(results_file,Circle_Estimation,:,3);
+%end
+
+%STEP 7:
 %Provide the user with a way to visually test how well the algorithm works
 %Let user_input be the image the user wants to see.  If user_input equals
 %zero, exit.
 user_input = input('Would you kindly enter an image to visualize? (Press 0 to Exit) ');
 
 while(user_input ~= 0)
-    imshow(strcat(directory,'//',files(user_input).name));
+    imshow(strcat('/home/rylan/Documents/193/simulated images/Image Sequence 4/',files(user_input).name));
     viscircles(Circle_Estimation(user_input,1:2),Circle_Estimation(user_input,3),'LineStyle','-');
     user_input = input('Would you kindly enter an image to visualize? (Press 0 to Exit) ');
 end
-
-close figure 1
