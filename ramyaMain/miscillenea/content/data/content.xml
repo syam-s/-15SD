@@ -1,0 +1,690 @@
+<zuiprezi>
+  <version>10</version>
+  <zui-table>
+    <settings>
+      
+      <autoplay>
+        
+        <delay>4000</delay>
+        
+      </autoplay>
+      
+      <bounds x="-15578.393444832936" y="-10618.424834703907" width="31156.786889665873" height="21236.849669407813"/>
+      <aspectratio>off</aspectratio>
+      <languages>
+        <language>en</language>
+      </languages>
+      <mode type="normal"/>
+    </settings>
+    <object id="14_30863873" type="button" x="4.774462922453529e-13" y="372.2428190000573" r="0" s="28.745075089644683" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1085.4387024111038</w>
+        <h>714.4889723485908</h>
+      </size>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    </object>
+    <object id="0_30863873" type="image" x="11083.705123204123" y="-4996.723359417466" r="0" s="11.55346315717842">
+      <source w="512" h="512">2975477683<mask x="0" y="12" w="512" h="487"/>
+      <url>2975477683.png</url></source>
+      <sourceUrl>http%3A%2F%2F0103.static.prezi.com.s3.amazonaws.com%2Fmedia%2F1%2F8%2F3%2F17b0dc068cd664208832e0a36ebe5c558224f.png</sourceUrl>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+      </meta>
+    <resource><id>2975477683</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/1/8/3/17b0dc068cd664208832e0a36ebe5c558224f.png</url></resource></object>
+    <object id="1_30863873" type="image" x="-2503.8798631628324" y="1451.2821785464437" r="0" s="1.9162943896236755">
+      <source w="1000" h="1000">1315936063<url>1315936063.png</url></source>
+      <sourceUrl>earth.png</sourceUrl>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    <resource><id>1315936063</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/a/e/5/33370b9b5b03ab4440dd1cf0e2ef8f5c15aca.png</url></resource></object>
+    <object id="123_30863873" type="image" x="13239.240484423448" y="3480.323272187245" r="0" s="1.8326051310541798">
+      <source w="490" h="490">1317543063<url>1317543063.png</url></source>
+      <sourceUrl>star.png</sourceUrl>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    <resource><id>1317543063</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/b/b/7/6d1e8180f92723ea17880291b0155e01010a6.png</url></resource></object>
+    <object id="124_30863873" type="image" x="6145.0563361332315" y="-8295.702802269247" r="0" s="1.8249918810478538">
+      <source w="490" h="490">1317543063<url>1317543063.png</url></source>
+      <sourceUrl>star.png</sourceUrl>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    <resource><id>1317543063</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/b/b/7/6d1e8180f92723ea17880291b0155e01010a6.png</url></resource></object>
+    <object id="4_30863873" type="button" x="-4092.862724313029" y="487.49653494427685" r="0" s="4.528039033991013" class="circle">
+      <type>circle</type>
+      <size>
+        <w>600.3350083752094</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    </object>
+    <object id="27_30863873" type="image" x="7083.167642710692" y="882.1356018578223" r="31.464349086096277" s="1.1479599573722554">
+      <source w="1000" h="1000">1341497243<mask x="0" y="325" w="1000" h="458"/>
+      <url>1341497243.png</url></source>
+      <sourceUrl>http%3A%2F%2F0103.static.prezi.com.s3.amazonaws.com%2Fmedia%2F4%2F4%2F4%2F0803aba5f835fae48b58ccd2c7eb20c6bc5d5.png</sourceUrl>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    <resource><id>1341497243</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/4/4/4/0803aba5f835fae48b58ccd2c7eb20c6bc5d5.png</url></resource></object>
+    <object id="10_30863873" type="image" x="-10303.68594189008" y="2524.9680583223585" r="0" s="7.131672966659614">
+      <source w="500" h="500">1339744723<url>1339744723.png</url></source>
+      <sourceUrl>astronaut.png</sourceUrl>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    <resource><id>1339744723</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/0/f/d/fdd8870bd8a86833a27a11493ad3e051e8f83.png</url></resource></object>
+    <object id="12_30863873" type="image" x="-2353.95" y="478.65" r="-47.39990521273557" s="1.8805532151828062">
+      <source w="700" h="700">1339776813<url>1339776813.png</url></source>
+      <sourceUrl>http%3A%2F%2F0103.static.prezi.com.s3.amazonaws.com%2Fmedia%2F1%2F1%2Fb%2F43128a523993ffc07d2c8a26333dab0df069a.png</sourceUrl>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    <resource><id>1339776813</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/1/1/b/43128a523993ffc07d2c8a26333dab0df069a.png</url></resource></object>
+    <object id="2_30863873" type="image" x="2062.96819352178" y="-1014.0919819552812" r="-18.144683577212497" s="9.223041815080922">
+      <source w="1788" h="1605" bt="125.55" bl="55.1">1341634398<url>1341634398.swf</url></source>
+      <sourceUrl>vonal-01.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    <resource><id>1341634398</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/e/3/f/6f2154a83b8e8dad05cd73a50a9d2d9b0c2fd.swf</url></resource></object>
+    <object id="5_30863873" type="button" x="-7416.25" y="-3731.55" r="0" s="2.1959960481013696" class="circle">
+      <type>circle</type>
+      <size>
+        <w>600.3350083752094</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    </object>
+    <object id="7_30863873" type="button" x="-6134.05" y="-6122.35" r="0" s="2.1959960481013696" class="circle">
+      <type>circle</type>
+      <size>
+        <w>600.3350083752094</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    </object>
+    <object id="8_30863873" type="button" x="3556.767900338771" y="-575.0468049827173" r="0" s="2.1959960481013696" class="circle">
+      <type>circle</type>
+      <size>
+        <w>600.3350083752094</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    </object>
+    <object id="16_30863873" type="text" x="-4092.6106916283848" y="-604.6086139777108" r="0" s="7.24624438636622" class="strong strong-background">
+      <height>29.28</height>
+      <width>84.20839198600281</width>
+      <p align="center">
+        <text color="16775176"><![CDATA[Team ]]></text>
+      </p>
+    </object>
+    <object id="17_30863873" type="text" x="-4076.6" y="-135.95" r="0" s="4.649834079321157" class="body body-background">
+      <height>117.12</height>
+      <width>358.83478962416456</width>
+      <p listType="bullet" indent="1">
+        <text weight="bold"><![CDATA[Amanda Ho]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text weight="bold"><![CDATA[Rylan Schaeffer]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text weight="bold"><![CDATA[Willie Huey]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text weight="bold"><![CDATA[Ramya Bhaskar]]></text>
+      </p>
+    </object>
+    <object id="18_30863873" type="text" x="-7424.55" y="-4111.8" r="0" s="3.547307379596548" class="strong strong-background">
+      <height>29.28</height>
+      <width>229.0103400674371</width>
+      <p align="center">
+        <text color="16775176"><![CDATA[Client Requirements:]]></text>
+      </p>
+    </object>
+    <object id="19_30863873" type="text" x="-7420.150000000001" y="-3911.35" r="0" s="2.2762675206634766" class="body body-background">
+      <height>87.84</height>
+      <width>358.83478962416456</width>
+      <p>
+        <text><![CDATA[Software that performs our tasks and that can be implemented in matlab, C++ or Python. ]]></text>
+      </p>
+    </object>
+    <object id="21_30863873" type="textwithplaceholder" x="-6137.352343366152" y="-6278.03686572496" r="0" s="2.1275405558269007" class="body body-background">
+      <placeholder text="Click to add text" x="-179.4" y="-14.6" align="left" width="358.83478962416456"/>
+    </object>
+    <object id="22_30863873" type="text" x="3575.55" y="-620.2" r="0" s="9.599815930870342" class="strong strong-background">
+      <height>29.28</height>
+      <width>98.97645474476197</width>
+      <p align="center">
+        <text color="16775176"><![CDATA[Q&A]]></text>
+      </p>
+    </object>
+    <object id="6_30863873" type="image" x="-2504.0480018240373" y="-4229.599590239138" r="0" s="0.9655951123836133">
+      <source w="1000" h="1000">1346916178<url>1346916178.png</url></source>
+      <sourceUrl>moon.png</sourceUrl>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    <resource><id>1346916178</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/8/b/7/5f5a2822c1d7914ca8b43f19519bff87d46a9.png</url></resource></object>
+    <object id="3_30863873" type="text" x="-880.7979353461069" y="8205.866603423689" r="0" s="115.96017769468608" class="head">
+      <height>28.8</height>
+      <width>227.0774149731989</width>
+      <p align="center">
+        <text><![CDATA[Droplet Analysis Software]]></text>
+      </p>
+    </object>
+    <object id="0" type="text" x="-8848.8" y="-8335.5" r="0" s="105.41834335880552" class="head">
+      <height>28.8</height>
+      <width>126.55465986259176</width>
+      <p align="center">
+        <text><![CDATA[Dream Team 2015! ]]></text>
+      </p>
+    </object>
+    <object id="1" type="text" x="-4076.6" y="931" r="0" s="4.649834079321157" class="body body-background">
+      <height>175.68</height>
+      <width>358.83478962416456</width>
+      <p listType="bullet" indent="1">
+        <text color="16777215" weight="bold"><![CDATA[Benjamin D. Shaw]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215" weight="bold"><![CDATA[National Aeronautics and Space Administration (NASA) ]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="16777215" weight="bold"><![CDATA[Human Exploration and Operations Mission Directorate (HEOMD) ]]></text>
+      </p>
+    </object>
+    <object id="2" type="text" x="-4075.2133832219697" y="329.82780885636197" r="0" s="7.24624438636622" class="strong strong-background">
+      <height>29.28</height>
+      <width>88.44040959474901</width>
+      <p align="center">
+        <text color="16775176"><![CDATA[Client ]]></text>
+      </p>
+    </object>
+    <object id="3" type="button" x="-7336.25" y="-413.75" r="0" s="2.1959960481013696" class="circle">
+      <type>circle</type>
+      <size>
+        <w>600.3350083752094</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    </object>
+    <object id="4" type="text" x="-7350.977529877501" y="-898.9834484070257" r="0" s="3.547307379596548" class="strong strong-background">
+      <height>29.28</height>
+      <width>146.03748488867626</width>
+      <p align="center">
+        <text color="16775176"><![CDATA[Our Task:]]></text>
+      </p>
+    </object>
+    <object id="5" type="text" x="-7340.35" y="-709.15" r="0" s="2.2762675206634766" class="body body-background">
+      <height>58.56</height>
+      <width>358.83478962416456</width>
+      <p>
+        <text weight="bold"><![CDATA[Automated methods are needed to analyze fuel droplets in space]]></text>
+      </p>
+    </object>
+    <object id="6" type="button" x="-786.5" y="-8460.4" r="0" s="2.1959960481013696" class="circle">
+      <type>circle</type>
+      <size>
+        <w>600.3350083752094</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    </object>
+    <object id="8" type="textwithplaceholder" x="-789.8023433661521" y="-8616.08686572496" r="0" s="2.1275405558269007" class="body body-background">
+      <placeholder text="Click to add text" x="-179.4" y="-14.6" align="left" width="358.83478962416456"/>
+    </object>
+    <object id="9" type="text" x="-7340.35" y="-511.95" r="0" s="2.2762675206634766" class="body body-background">
+      <height>58.56</height>
+      <width>358.83478962416456</width>
+      <p>
+        <text weight="bold"><![CDATA[Incorporate diffraction analysis algorithms already developed]]></text>
+      </p>
+    </object>
+    <object id="10" type="text" x="-7341.15" y="-320.4" r="0" s="2.2762675206634766" class="body body-background">
+      <height>58.56</height>
+      <width>358.83478962416456</width>
+      <p>
+        <text weight="bold"><![CDATA[Develop and implement algorithms to account for sooting]]></text>
+      </p>
+    </object>
+    <object id="11" type="text" x="-7341.15" y="-92.15" r="0" s="2.2762675206634766" class="body body-background">
+      <height>87.84</height>
+      <width>358.83478962416456</width>
+      <p>
+        <text weight="bold"><![CDATA[Develop and implement algorithms for evaluation of uncertainties in the measurements]]></text>
+      </p>
+    </object>
+    <object id="12" type="text" x="-7420.15" y="-3671.55" r="0" s="2.2762675206634766" class="body body-background">
+      <height>87.84</height>
+      <width>358.83478962416456</width>
+      <p>
+        <text><![CDATA[Must run on Windows, Mac, and Linux platforms, and on a parallel machine. ]]></text>
+      </p>
+    </object>
+    <object id="13" type="text" x="-7420.3" y="-3497.1" r="0" s="2.2762675206634766" class="body body-background">
+      <height>29.28</height>
+      <width>358.83478962416456</width>
+      <p>
+        <text><![CDATA[Documentation of the software]]></text>
+      </p>
+    </object>
+    <object id="14" type="text" x="-6148.150000000001" y="-6497.25" r="0" s="3.547307379596548" class="strong strong-background">
+      <height>29.28</height>
+      <width>229.0103400674371</width>
+      <p align="center">
+        <text color="16775176"><![CDATA[Client Requirements:]]></text>
+      </p>
+    </object>
+    <object id="15" type="text" x="-810.9" y="-8843.949999999999" r="0" s="3.547307379596548" class="strong strong-background">
+      <height>29.28</height>
+      <width>229.0103400674371</width>
+      <p align="center">
+        <text color="16775176"><![CDATA[Related Technology:]]></text>
+      </p>
+    </object>
+    <object id="16" type="button" x="2119.5000000000005" y="-8203.184299308416" r="0" s="2.1959960481013696" class="circle">
+      <type>circle</type>
+      <size>
+        <w>600.3350083752094</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    </object>
+    <object id="17" type="textwithplaceholder" x="2116.1976566338485" y="-8358.871165033375" r="0" s="2.1275405558269007" class="body body-background">
+      <placeholder text="Click to add text" x="-179.4" y="-14.6" align="left" width="358.83478962416456"/>
+    </object>
+    <object id="18" type="text" x="2114.2" y="-8645" r="0" s="3.547307379596548" class="strong strong-background">
+      <height>29.28</height>
+      <width>150.52173971141158</width>
+      <p align="center">
+        <text color="16775176"><![CDATA[Our Approach:]]></text>
+      </p>
+    </object>
+    <object id="20" type="button" x="3674.999999999998" y="-5617.234299308417" r="0" s="2.1959960481013696" class="circle">
+      <type>circle</type>
+      <size>
+        <w>600.3350083752094</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <parentTemplate>mission-to-mars</parentTemplate>
+        <notModifiedByUser>from-template</notModifiedByUser>
+      </meta>
+    </object>
+    <object id="21" type="textwithplaceholder" x="3671.6976566338462" y="-5772.921165033376" r="0" s="2.1275405558269007" class="body body-background">
+      <placeholder text="Click to add text" x="-179.4" y="-14.6" align="left" width="358.83478962416456"/>
+    </object>
+    <object id="22" type="text" x="3650.599999999998" y="-6000.784299308416" r="0" s="3.547307379596548" class="strong strong-background">
+      <height>29.28</height>
+      <width>229.0103400674371</width>
+      <p align="center">
+        <text color="16775176"><![CDATA[Challenging Aspects:]]></text>
+      </p>
+    </object>
+  </zui-table>
+  <background>
+    <layer depth="12.084486231742476" fadescale="0.1820515955590427">
+      <object id="background1326325883" type="image" x="2743.5061907033078" y="1015.760386931074" r="0" s="14.864393887623066">
+        <source w="5562" h="3000">1326325883<url>1326325883.png</url></source>
+        <sourceUrl>sky3.png</sourceUrl>
+      <resource><id>1326325883</id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/1/1/b/897a8d008e1ad6f1ab1d51280a09290473aae.png</url></resource></object>
+    </layer>
+  </background>
+  <path>
+    <s>
+      <eagle o="14_30863873"/>
+    </s>
+    <s>
+      <eagle o="4_30863873"/>
+    </s>
+    <s>
+      <eagle o="3"/>
+    </s>
+    <s>
+      <eagle o="5_30863873"/>
+    </s>
+    <s>
+      <eagle o="7_30863873"/>
+    </s>
+    <s>
+      <eagle o="6"/>
+    </s>
+    <s>
+      <eagle o="16"/>
+    </s>
+    <s>
+      <eagle o="20"/>
+    </s>
+    <s>
+      <eagle o="8_30863873"/>
+    </s>
+    <s>
+      <eagle o="14_30863873"/>
+    </s>
+  </path>
+  <style type="text/css"><![CDATA[
+@font-face
+{
+	src: url('Arsenal-Regular.keg');
+	fontFamily: body;
+	font-class: body;
+	font-style: normal;
+	font-weight: normal;
+	font-family: Arsenal;
+}
+
+@font-face
+{
+	src: url('LeagueGothic-Regular.keg');
+	fontFamily: head;
+	font-class: head;
+	font-style: normal;
+	font-weight: normal;
+	font-family: LeagueGothic;
+}
+
+@font-face
+{
+	src: url('Arsenal-BoldItalic.keg');
+	fontFamily: strong;
+	font-class: strong;
+	font-style: italic;
+	font-weight: bold;
+	font-family: Arsenal;
+}
+
+@font-face
+{
+	src: url('Arsenal-Bold.keg');
+	font-style: normal;
+	font-weight: bold;
+	font-family: Arsenal;
+}
+
+@font-face
+{
+	src: url('Arsenal-Italic.keg');
+	font-style: italic;
+	font-weight: normal;
+	font-family: Arsenal;
+}
+
+@font-face
+{
+	src: url('LeagueGothic-Italic.keg');
+	font-style: italic;
+	font-weight: normal;
+	font-family: LeagueGothic;
+}
+
+.line1
+{
+	color: #000;
+	gradEndColor: #000;
+	gradStartColor: #000;
+}
+
+.line2
+{
+	color: #1d3f5b;
+	gradEndColor: #1d3f5b;
+	gradStartColor: #1d3f5b;
+}
+
+.line3
+{
+	color: #6fa2a8;
+	gradEndColor: #6fa2a8;
+	gradStartColor: #6fa2a8;
+}
+
+.line4
+{
+	color: #b14c35;
+	gradEndColor: #b14c35;
+	gradStartColor: #b14c35;
+}
+
+.line5
+{
+	color: #ddd7a9;
+	gradEndColor: #ddd7a9;
+	gradStartColor: #ddd7a9;
+}
+
+.poly1
+{
+	gradEndColor: #000;
+	gradStartColor: #000;
+}
+
+.poly2
+{
+	gradEndColor: #1d3f5b;
+	gradStartColor: #1d3f5b;
+}
+
+.poly3
+{
+	gradEndColor: #6fa2a8;
+	gradStartColor: #6fa2a8;
+}
+
+.poly4
+{
+	gradEndColor: #b14c35;
+	gradStartColor: #b14c35;
+}
+
+.poly5
+{
+	gradEndColor: #ddd7a9;
+	gradStartColor: #ddd7a9;
+}
+
+Background
+{
+	gradEnd: #193144;
+	gradStart: #193144;
+}
+
+Grid
+{
+	color: #295171;
+}
+
+ZArrow
+{
+	borderAlpha: 0;
+	borderThickness: 0;
+	gradEndAlpha: 1;
+	gradStartAlpha: 1;
+	lockTintAlpha: 0;
+	thickness: 7;
+}
+
+ZCircle
+{
+	borderAlpha: 0;
+	borderThickness: 0;
+	gradEndAlpha: 1;
+	gradStartAlpha: 1;
+	lockTintAlpha: 0;
+	radius: 0;
+	thickness: 100;
+}
+
+ZCurveLine
+{
+	color: #333;
+}
+
+ZFrame.bracket
+{
+	borderColor: #737373;
+	borderThickness: 0;
+	gradEndAlpha: .8;
+	gradEndColor: #737373;
+	gradStartAlpha: .8;
+	gradStartColor: #737373;
+	padding: 1.03;
+	radius: 10;
+	thickness: 8;
+}
+
+ZFrame.circle
+{
+	borderAlpha: 0;
+	borderThickness: 0;
+	gradEndAlpha: .8;
+	gradEndColor: #6fa2a8;
+	gradStartAlpha: .8;
+	gradStartColor: #6fa2a8;
+	padding: 1.03;
+	thickness: 5;
+}
+
+ZFrame.roundrect
+{
+	borderAlpha: 0.8;
+	borderColor: #6fa2a8;
+	borderThickness: 10;
+	gradEndAlpha: 0.8;
+	gradEndColor: #1d3f5b;
+	gradStartAlpha: 0.8;
+	gradStartColor: #1d3f5b;
+	padding: 1.03;
+	radius: 3;
+}
+
+ZLabel
+{
+	lockTintAlpha: 0.15;
+	padding: 1.2;
+}
+
+ZLabel.body
+{
+	color: #f6f6f6;
+	fontFamily: body;
+}
+
+ZLabel.body-background
+{
+	background-alpha: 0.8;
+	background-color: #3c505f;
+	background-padding: 5;
+}
+
+ZLabel.head
+{
+	color: #f6f6f6;
+	fontFamily: head;
+}
+
+ZLabel.head-background
+{
+	background-alpha: 0.8;
+	background-color: #000;
+	background-padding: 5;
+}
+
+ZLabel.strong
+{
+	color: #b14c35;
+	fontFamily: strong;
+}
+
+ZLabel.strong-background
+{
+	background-alpha: 0.8;
+	background-color: #1d3f5b;
+	background-padding: 5;
+}
+
+ZLine
+{
+	borderAlpha: 0;
+	borderThickness: 0;
+	color: #333;
+	lockTintAlpha: 0;
+}
+
+ZMarker
+{
+	alpha: 0.5;
+	color: #0febff;
+}
+
+ZPath
+{
+	alpha: 1;
+	color: #40abe6;
+	textColor: #fff;
+	thickness: 3;
+}
+
+ZPath Ball.base
+{
+	alpha: 1;
+	fillColor: #40abe6;
+	radius: 12;
+}
+
+ZPath Ball.mid
+{
+	alpha: .5;
+	fillColor: #40abe6;
+	radius: 8;
+}
+
+ZPoly
+{
+	borderAlpha: 0;
+	borderThickness: 0;
+	gradEndAlpha: 1;
+	gradStartAlpha: 1;
+	lockTintAlpha: 0;
+	radius: 30;
+}
+
+]]></style>
+  <hash>-4b40fa76</hash>
+<sync><oid>pdehhoc77qgs</oid><title>dream-team-2015</title><hash>-4b40fa76</hash></sync><config>QJsAqKs5XtDI634jb0m23/X9IS7IOtMYS1+87bwcCCdxevg2CAp28lLoZe5WDpt4hnFUEPwiks0zw8mn2p9qgDTMjHDIIO6o1A3lPjQNz5867bO6xXTDw2Wtir2SoF9ra9hlv7tXRYy2i6FQnlbgl8u1DPcwcA49CNIZ9i/kgvH0J5MyE/sraYTPfWjtik8M/DLDUEDf58xqjmI6pcADVRbQMO22P/x4PSYiIAkTx5i0Rb20SJ88jBQNBlTy0dqL2gZ1LDtz3eccdz5eKNrf1jA4c6l9qlVQpRWp6yAiH0k/0sg3hDoPVFfA0mIQQpQ2D73PvyuEUuKGrOX2iywMpw==</config></zuiprezi>
