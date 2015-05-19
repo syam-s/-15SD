@@ -1,4 +1,4 @@
-# Install script for directory: /Users/ramyabhaskar834/current/ECS193AB/rightNow
+# Install script for directory: /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,7 +33,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/Users/ramyabhaskar834/current/ECS193AB/rightNow/${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "/Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/Users/ramyabhaskar834/current/ECS193AB/rightNow/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "/Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()

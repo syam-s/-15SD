@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/ramyabhaskar834/current/ECS193AB/rightNow/houghDirectory.cpp
+/Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/houghDirectory.cpp
 opencv2/highgui/highgui.hpp
-/Users/ramyabhaskar834/current/ECS193AB/rightNow/opencv2/highgui/highgui.hpp
+/Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/opencv2/highgui/highgui.hpp
 opencv2/imgproc/imgproc.hpp
-/Users/ramyabhaskar834/current/ECS193AB/rightNow/opencv2/imgproc/imgproc.hpp
+/Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/opencv2/imgproc/imgproc.hpp
 iostream
 -
 stdio.h

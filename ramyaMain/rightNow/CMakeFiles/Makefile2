@@ -47,10 +47,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ramyabhaskar834/current/ECS193AB/rightNow
+CMAKE_SOURCE_DIR = /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ramyabhaskar834/current/ECS193AB/rightNow
+CMAKE_BINARY_DIR = /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow
 
 #=============================================================================
 # Target rules for target CMakeFiles/houghDirectory.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/ramyabhaskar834/current/ECS193AB/rightNow
 CMakeFiles/houghDirectory.dir/all:
 	$(MAKE) -f CMakeFiles/houghDirectory.dir/build.make CMakeFiles/houghDirectory.dir/depend
 	$(MAKE) -f CMakeFiles/houghDirectory.dir/build.make CMakeFiles/houghDirectory.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ramyabhaskar834/current/ECS193AB/rightNow/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/CMakeFiles  1
 	@echo "Built target houghDirectory"
 .PHONY : CMakeFiles/houghDirectory.dir/all
 
@@ -69,9 +69,9 @@ all: CMakeFiles/houghDirectory.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/houghDirectory.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ramyabhaskar834/current/ECS193AB/rightNow/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/houghDirectory.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ramyabhaskar834/current/ECS193AB/rightNow/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/CMakeFiles 0
 .PHONY : CMakeFiles/houghDirectory.dir/rule
 
 # Convenience name for target.

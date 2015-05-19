@@ -83,9 +83,9 @@ int mainHough(const char* arg, int fileNumber){
     ret = "0" + ret;
   }
 
-  imwrite( "../images4/Gray_Image" + ret + ".jpg", src );
+  imwrite( "../images5/Gray_Image" + ret + ".jpg", src );
 
-  return radius;
+  return radius*float(2);
 }
 
 int main()
@@ -94,7 +94,7 @@ int main()
     std::cout << "Hough Circle Transform Running on All Files in Directory..." << std::endl;
     string dir = string(".");
     vector<string> files = vector<string>();
-    ofstream myFile("radii.csv", ios::out);
+    ofstream myFile("../images5/radii5.csv", ios::out);
 
     getdir(dir,files);
     int j = 0;
