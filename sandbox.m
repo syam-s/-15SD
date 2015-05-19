@@ -16,7 +16,11 @@
 %contour(image);
 
 %edge detection
-I = image;
+
+I = rgb2gray(imread('/home/rylan/Documents/193/frame-0207.tif'));
+
+I = imgaussfilt(I);
+
 [BW1, threshold1] = edge(I, 'Sobel');
 figure, imshow(BW1);
 %worst, but needed for BW7
@@ -34,6 +38,10 @@ figure, imshow(BW2);
 fudgeFactor = .1;
 BW7 = edge(I,'canny', threshold1 * fudgeFactor);
 figure, imshow(BW7), title('binary gradient mask');
+
+[centersDark, radiiDark, metric] = imfindcircles(BW7,[30 50], 'ObjectPolarity','dark','Sensitivity',0.95);
+viscircles(centersDark(1,1:2),radiiDark(1,1),'LineStyle','-');
+
 %number 2
 
 %create mask
