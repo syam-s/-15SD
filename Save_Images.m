@@ -1,6 +1,6 @@
 first = input('First image to save is: ');
 last = input('Last image to save is: ');
-for j = 308:347 %last_image
+for j = first:last %last_image
     image = imread(strcat(directory,'//',files(j).name));
     [im_height, im_width, im_color] = size(image);
     imshow(strcat(directory,'//',files(j).name));
