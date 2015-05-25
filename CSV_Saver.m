@@ -1,13 +1,12 @@
 total_images = input('Please input the total number of images: ');
-results = zeros(total,5);
+results = zeros(total_images,5);
 results(:,1) = 1:total_images;
 results(:,2) = Circle_Estimation(:,3);
 results(:,3) = Circle_Estimation(:,3).*2;
 results(:,4) = Circle_Estimation(:,3) .*(30.25/1024);
-results(:,5) = results(:,3).*2;
+results(:,5) = results(:,4).*2;
 prompt = 'Where would you like to save the diameters to? Please input a filename: ';
 str = input(prompt, 's');
 str = strcat(str,'.csv');
 csvwrite(str,results);
-disp('The images have been saved. The results are shown in this format: Frame number, Radius in pixels, Diameter in pixels, Radius in mm, Diameter in mm');
-clear;
+disp('The results have been saved. The results are shown in this format: Frame number, Radius in pixels, Diameter in pixels, Radius in mm, Diameter in mm');
