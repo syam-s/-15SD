@@ -8,7 +8,7 @@
 %Uncomment this later
 %directory = input('Would you kindly enter a file path? ','s');
 %Remove this later
-directory = 'Image Sequence 5';
+directory = 'Image Sequence 4';
 
 %Prompt user for first image to start the analysis
 %first_image = input('Would you kindly enter the first image in the sequence? ');
@@ -45,7 +45,7 @@ Circle_Estimation = nan(length(files),3);
 %   1. Upper radius bound is 1.10 of half the "square's" longest dimension
 %   2. Lower radius bound is 0.85 of half the "square's" longest dimension
 disp('Please inscribe the droplet in a square.');
-imshow('Image Sequence 5//frame-0001.tif');
+imshow('Image Sequence 4//frame-0001.tif');
 h = imellipse;
 wait(h);
 position_i = getPosition(h);
@@ -54,34 +54,8 @@ height_i = position_i(4);
 centerx_i = position_i(1) + position_i(3)/2;
 centery_i = position_i(2) + position_i(4)/2;
 initial_radius = width_i/2;
-
-%Show user the last image in the sequence. Prompt the user to inscribe the
-%droplet in a square.  Assume that the "square" is imperfectly drawn.
-%Assume further that
-%   1. Upper radius bound is 1.10 of half the "square's" longest dimension
-%   2. Lower radius bound is 0.85 of half the "square's" longest dimension
-disp('Please inscribe the droplet in a square.');
-imshow('Image Sequence 5//frame-0348.tif');
-h = imellipse;
-position_f = getPosition(h);
-width_f = position_f(3);
-height_f = position_f(4);
-centerx_f = position_f(1) + position_f(3)/2;
-centery_f = position_f(2) + position_f(4)/2;
-final_radius = width_f/2;
-
-%With each subsequent image in the sequence, the radius should shrink by a
-%small but not insignificant amount.  We assume that the radius will
-%decrease linearly between the initial bounds and the final bounds.
-%lower_bound_reduction_constant = ...
-    %(final_lower_radius_bound - initial_lower_radius_bound)/length(files);
-%upper_bound_reduction_constant = ...
-    %(final_upper_radius_bound - initial_upper_radius_bound)/length(files);
-
-%Set the initial bounds to the variable bounds
-%lower_radius_bound = initial_lower_radius_bound;
-%upper_radius_bound = initial_upper_radius_bound;
-
+radius_i = initial_radius;
+close all;
 
 %Step 5:
 %Iterate through every file in the directory, starting with the user
@@ -89,13 +63,12 @@ final_radius = width_f/2;
 %assume that the most likely circle is the correct circle.
 count = 0;
 for file = files'
-    
     %Skip all images before the user selected first image
     %if(count < first_image)
     %    count = count + 1;
     %    continue;
     %end
-    disp(strcat('Working on ', file.name));
+    disp(strcat('Working on ', '/ ',file.name));
     if(count < first_image)
         count = count + 1;
         continue;
@@ -103,40 +76,55 @@ for file = files'
     
     %Open image
     I = rgb2gray(imread(strcat(directory,'//',file.name)));
-    
-    %Calculate bounds for the particular image
-%     lower_radius_bound = lower_radius_bound - lower_bound_reduction_constant;
-%     if(lower_radius_bound < 0)
-%         lower_radius_bound = 1;
-%     end
-%     disp(lower_radius_bound);
-%     upper_radius_bound = upper_radius_bound - upper_bound_reduction_constant;
-%     if(upper_radius_bound < 0)
-%         upper_radius_bound = 1;
-%     end
-%     disp(upper_radius_bound);
-    
-    %CHANGE THIS TO THE SQUARE OF THE RADIUS REDUCES LINEAR
+    image = imread(strcat(directory,'//',file.name));
     
     [BW1, threshold1] = edge(I, 'Sobel');
     %worst, but needed for BW7
     [BW2, threshold2] = edge(I, 'Canny');
     fudgeFactor = .1;
-    BW7 = edge(I,'canny', threshold1 * fudgeFactor);    
-    %Use imfindcircles to find potential circles for the particular image
-    [centersDark, radiiDark, metric] = imfindcircles(BW7,...
-        [floor(initial_radius-5) ceil(initial_radius+5)],'ObjectPolarity','dark',...
-        'Sensitivity',0.99);
-    
-    %If the current image is the first image in the sequence, assume that
-    %the correct circle is the circle ranked most likely by imfindcircles.
+    BW7 = edge(I,'Canny', threshold1 * fudgeFactor);
+    %Use imfindcircles to find potential circles for original image
+    try
+        [centersDark, radiiDark, metric] = imfindcircles(image,...
+            [floor(initial_radius-5) ceil(initial_radius+5)],'ObjectPolarity','dark',...
+            'Sensitivity',0.99);
+    catch
+    end
+    %Use imfindcircles to find potential circles for the binary gradient
+    %image
+    try
+        [centersDark2, radiiDark2, metric2] = imfindcircles(BW7,...
+            [floor(initial_radius-5) ceil(initial_radius+5)],'ObjectPolarity','dark',...
+            'Sensitivity',0.99);
+    %Can't detect circles at all
+    catch
+        continue;
+    end
+    %Find the circle ranked by imfindcircles with center and radius closes to drawn circle.
      if(count == first_image)
-         xhat = centerx_i;
-         yhat = centery_i;
-         rhat = initial_radius;
-         [~, pos] = min(abs(centersDark(:,1)-xhat) + ...
-            abs(centersDark(:,2)-yhat) + (radiiDark(:)-rhat));
-         Circle_Estimation(count,:) = [centersDark(pos,1:2) radiiDark(pos,1)];
+         xhat = centerx_i; %get the x-coord of drawn image
+         yhat = centery_i; %get the y-coord of drawn image
+         rhat = initial_radius; %get the radius of the drawn image
+         try%try to see if you can calculate a best fit circle on original image
+         [min1, pos] = min(abs(centersDark(:,1)-xhat) + ...
+            abs(centersDark(:,2)-yhat) + abs(radiiDark(:)-rhat));
+         catch%can't calculate a circle of best fit on the original image
+             pos = 100000;
+         end
+         %Calculate circle of best fit of the binary gradient image
+         [min2, pos2] = min(abs(centersDark2(:,1)-xhat) + ...
+            abs(centersDark2(:,2)-yhat) + abs(radiiDark2(:)-rhat));
+        if( pos == 100000)%Can't detect a circle in original image
+            Circle_Estimation(count,:) = [centersDark2(pos2,1:2) radiiDark2(pos2,1)];
+        else
+        %Can detect a circle in original image. So determine whether circle 
+        %of best fit is original image or binary gradient mask of oringal image
+            if(min1 < min2)
+                Circle_Estimation(count,:) = [centersDark(pos,1:2) radiiDark(pos,1)];
+            else
+                Circle_Estimation(count,:) = [centersDark2(pos2,1:2) radiiDark2(pos2,1)];
+            end            
+        end              
      end
     
     %If the current image is subsequent to the first image in the sequence,
@@ -147,13 +135,32 @@ for file = files'
         yhat = Circle_Estimation(count-1,2);
         rhat = Circle_Estimation(count-1,3);
         
-        [~, pos] = min(abs(centersDark(:,1)-xhat) + ...
-            abs(centersDark(:,2)-yhat) + (radiiDark(:)-rhat));
-        
-        Circle_Estimation(count,:) = [centersDark(pos,1:2) radiiDark(pos,1)];
-        
+        try
+        [min1, pos] = min(abs(centersDark(:,1)-xhat) + ...
+            abs(centersDark(:,2)-yhat) + abs(radiiDark(:)-rhat));
+        catch
+            pos = 100000;
+        end
+        [min2, pos2] = min(abs(centersDark2(:,1)-xhat) + ...
+            abs(centersDark2(:,2)-yhat) + abs(radiiDark2(:)-rhat));
+        if(pos == 100000)
+            Circle_Estimation(count,:) = [centersDark2(pos2,1:2) radiiDark2(pos2,1)];
+        else
+            if(min1 < min2)
+                try
+                    Circle_Estimation(count,:) = [centersDark(pos,1:2) radiiDark(pos,1)];
+                catch
+                    Circle_Estimation(count,:) = [centersDark2(pos2,1:2) radiiDark2(pos2,1)];
+                end
+            else
+                Circle_Estimation(count,:) = [centersDark2(pos2,1:2) radiiDark2(pos2,1)];
+            end            
+        end
     end
     
     initial_radius = Circle_Estimation(count,3);
     count = count + 1;
+%     if(count >14)
+%         break;
+%     end
 end
