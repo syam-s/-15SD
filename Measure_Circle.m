@@ -63,5 +63,5 @@ for i = first_image:last_image
     end
         
 end
-
+%Save when finished
 save('measured.mat');
