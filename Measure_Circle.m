@@ -14,7 +14,7 @@ end
 % b. Prompt user for the first image to start the analysis
 % c. Prompt user for the file extension.
 %Prompt user for complete file path
-directory = input('Would you kindly enter a file path? ','s');
+directory = input('Please enter the directory of image sequence: ','s');
 %Prompt user for first image to start the measurement
 first_image = input('Would you kindly enter the first image in the sequence? ');
 %Prompt user for the last image to start the measurement
