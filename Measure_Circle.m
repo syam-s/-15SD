@@ -33,7 +33,7 @@ files = dir(strcat(directory,'//','*',file_extension));
 % All values are initialized to NaN (Not a Number).
 if(exist('Circle_Estimation') == 0)
     Circle_Estimation = nan(length(files),3);
-end.
+end
 for i = first_image:last_image
     try
         disp('Please inscribe the droplet in a circle.');
