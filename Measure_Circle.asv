@@ -31,8 +31,8 @@ files = dir(strcat(directory,'//','*',file_extension));
 % Column 2 will be the y-coordinate of the estimated circle.
 % Column 3 will be the radius of the estimated circle.
 % All values are initialized to NaN (Not a Number).
-if(exist('Circle_Estimation') == 0)
-    Circle_Estimation = nan(length(files),3);
+if(exist('Circle_Measurement') == 0)
+    Circle_Measurement = nan(length(files),3);
 end.
 for i = first_image:last_image
     try
@@ -42,24 +42,17 @@ for i = first_image:last_image
         imshow(strcat(directory,'//',directory,'_',sprintf('%05d',i),file_extension));
         h = imellipse;
         wait(h);
-        %Get the position from thew drawn circle
+        %Get the position from thew dra
         position = getPosition(h);
-        %Obtain the width
         width = position(3);
-        %Obtain the height
         height = position(4);
-        %Obtain the x-coodinate of the center
         centerx = position(1) + position(3)/2;
-        %Obtain the y-coordinate of the center
         centery = position(2) + position(4)/2;
-        %Obtain the radius by dividing width by 2
         radius = width/2;
-        %Save the measurement in a matrix
-        Circle_Estimation(i+1,:,:) = [centerx centery radius];
+        Circle_Measurement(i+1,:,:) = [centerx centery radius];
         close all;
     catch
-        %Save in case of error
-        save('measuted.mat');
+        save('matlab.mat');
     end
         
 end
