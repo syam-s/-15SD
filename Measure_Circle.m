@@ -16,9 +16,9 @@ end
 %Prompt user for complete file path
 directory = input('Please enter the directory of image sequence: ','s');
 %Prompt user for first image to start the measurement
-first_image = input('Would you kindly enter the first image in the sequence? ');
+first_image = input('Would you kindly enter the first image in the sequence to analyze? ');
 %Prompt user for the last image to start the measurement
-last_image = input('Would you kindly enter the last image in the sequence? ');
+last_image = input('Would you kindly enter the last image in the sequence to analyze? ');
 %Prompt user for the file extension. Default file extension is .tif
 file_extension = '.tif';
 %STEP 2:

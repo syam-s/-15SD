@@ -2,24 +2,19 @@
 %Solicit user input
 %   a. Prompt user for complete file path
 %   b. Prompt user for the first image to start the analysis
-%   c. Prompt user for the file extension.
 
-%Prompt user for complete file path
-%Uncomment this later
-%directory = input('Would you kindly enter a file path? ','s');
-%Remove this later
-directory = 'Image Sequence 4';
+
+%Prompt user for directory
+directory = input('Would you kindly enter the directory of the image sequence? ','s');
+
 
 %Prompt user for first image to start the analysis
-%first_image = input('Would you kindly enter the first image in the sequence? ');
-first_image = 1;
+first_image = input('Would you kindly enter the image number to start at? ');
 
-%Prompt user for the file extension.  Default file extension is .tif
+%Prompt user for last image to end the analysis
+last_image = input('Would you kindly enter the image number to end at? ');
+
 file_extension = '.tif';
-%Uncomment this later
-%file_extension = input('Would you kindly enter a file format? ','s');
-%Remove this later
-
 
 %STEP 2:
 %Open the directory containing all the image files
@@ -40,12 +35,10 @@ Circle_Estimation = nan(length(files),3);
 %user to help us generate these boundaries.
 
 %Show user the first image in the sequence. Prompt the user to inscribe the
-%droplet in a square.  Assume that the "square" is imperfectly drawn.
-%Assume further that
-%   1. Upper radius bound is 1.10 of half the "square's" longest dimension
-%   2. Lower radius bound is 0.85 of half the "square's" longest dimension
+%droplet in a circle.
 disp('Please inscribe the droplet in a square.');
-imshow('Image Sequence 4//frame-0001.tif');
+start_image = strcat(directory,'//',files(first_image).name)
+imshow(start_image);
 h = imellipse;
 wait(h);
 position_i = getPosition(h);
@@ -75,12 +68,14 @@ for file = files'
     end
     
     %Open image
-    I = rgb2gray(imread(strcat(directory,'//',file.name)));
+    try
+        I = rgb2gray(imread(strcat(directory,'//',file.name)));
+    catch
+        I = mat2gray(imread(strcat(directory,'//',file.name)));
+    end
     image = imread(strcat(directory,'//',file.name));
     
     [BW1, threshold1] = edge(I, 'Sobel');
-    %worst, but needed for BW7
-    [BW2, threshold2] = edge(I, 'Canny');
     fudgeFactor = .1;
     BW7 = edge(I,'Canny', threshold1 * fudgeFactor);
     %Use imfindcircles to find potential circles for original image
@@ -160,7 +155,7 @@ for file = files'
     
     initial_radius = Circle_Estimation(count,3);
     count = count + 1;
-%     if(count >14)
-%         break;
-%     end
+    if(count > last_image)
+        break;
+    end
 end
