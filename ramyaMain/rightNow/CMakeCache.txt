@@ -107,7 +107,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 CMAKE_OSX_SYSROOT:STRING=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=houghDirectory
+CMAKE_PROJECT_NAME:STATIC=dropletFinder
 
 //Flags used by the linker during the creation of dll's.
 CMAKE_SHARED_LINKER_FLAGS:STRING=
@@ -171,6 +171,12 @@ OpenCV_LIB_DIR_DBG:PATH=
 
 //Path where release OpenCV libraries are located
 OpenCV_LIB_DIR_OPT:PATH=
+
+//Value Computed by CMake
+dropletFinder_BINARY_DIR:STATIC=/Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow
+
+//Value Computed by CMake
+dropletFinder_SOURCE_DIR:STATIC=/Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow
 
 //Value Computed by CMake
 houghDirectory_BINARY_DIR:STATIC=/Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow

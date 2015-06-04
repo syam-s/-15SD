@@ -1,0 +1,34 @@
+These are the commands to execute the C++ version of dreamTeam2015DropletFinder.cpp
+
+/Applications/CMake.app/Contents/bin/cmake .
+
+make
+
+./dropletFinder
+
+to create a gif of the analyzed images for error checking….
+
+convert -set delay 20 -colorspace GRAY -colors 256 -dispose 1 -loop 0 -scale 50% *.jpg Output.gif
+
+the above commands assume that:
+
+openCV is installed,
+CMake is installed,
+and that macports, with imageMagik is installed
+/Users/ramyabhaskar834/Desktop/SeniorDesign.txt
+all of the above are free distributions of software.
+
+++++++++++++++++++++++++++++++
+for OpenCV, go here:
+http://blogs.wcode.org/2014/10/howto-install-build-and-use-opencv-macosx-10-10/
+
+++++++++++++++++++++++++++++++
+git help:
+http://stackoverflow.com/questions/5423517/how-do-i-push-a-local-git-branch-to-master-branch-in-the-remote
+
+for quick demo on ramya's machine:
+open terminal and type:
+cd current/ECS193AB/-15SD/ramyaMain/rightNow
+/Applications/CMake.app/Contents/bin/cmake .
+make
+./dropletFinder

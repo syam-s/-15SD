@@ -53,38 +53,38 @@ CMAKE_SOURCE_DIR = /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/right
 CMAKE_BINARY_DIR = /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow
 
 #=============================================================================
-# Target rules for target CMakeFiles/houghDirectory.dir
+# Target rules for target CMakeFiles/dropletFinder.dir
 
 # All Build rule for target.
-CMakeFiles/houghDirectory.dir/all:
-	$(MAKE) -f CMakeFiles/houghDirectory.dir/build.make CMakeFiles/houghDirectory.dir/depend
-	$(MAKE) -f CMakeFiles/houghDirectory.dir/build.make CMakeFiles/houghDirectory.dir/build
+CMakeFiles/dropletFinder.dir/all:
+	$(MAKE) -f CMakeFiles/dropletFinder.dir/build.make CMakeFiles/dropletFinder.dir/depend
+	$(MAKE) -f CMakeFiles/dropletFinder.dir/build.make CMakeFiles/dropletFinder.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/CMakeFiles  1
-	@echo "Built target houghDirectory"
-.PHONY : CMakeFiles/houghDirectory.dir/all
+	@echo "Built target dropletFinder"
+.PHONY : CMakeFiles/dropletFinder.dir/all
 
 # Include target in all.
-all: CMakeFiles/houghDirectory.dir/all
+all: CMakeFiles/dropletFinder.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/houghDirectory.dir/rule: cmake_check_build_system
+CMakeFiles/dropletFinder.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/houghDirectory.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/dropletFinder.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ramyabhaskar834/current/ECS193AB/-15SD/ramyaMain/rightNow/CMakeFiles 0
-.PHONY : CMakeFiles/houghDirectory.dir/rule
+.PHONY : CMakeFiles/dropletFinder.dir/rule
 
 # Convenience name for target.
-houghDirectory: CMakeFiles/houghDirectory.dir/rule
-.PHONY : houghDirectory
+dropletFinder: CMakeFiles/dropletFinder.dir/rule
+.PHONY : dropletFinder
 
 # clean rule for target.
-CMakeFiles/houghDirectory.dir/clean:
-	$(MAKE) -f CMakeFiles/houghDirectory.dir/build.make CMakeFiles/houghDirectory.dir/clean
-.PHONY : CMakeFiles/houghDirectory.dir/clean
+CMakeFiles/dropletFinder.dir/clean:
+	$(MAKE) -f CMakeFiles/dropletFinder.dir/build.make CMakeFiles/dropletFinder.dir/clean
+.PHONY : CMakeFiles/dropletFinder.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/houghDirectory.dir/clean
+clean: CMakeFiles/dropletFinder.dir/clean
 .PHONY : clean
 
 #=============================================================================

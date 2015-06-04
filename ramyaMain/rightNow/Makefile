@@ -102,41 +102,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named houghDirectory
+# Target rules for targets named dropletFinder
 
 # Build rule for target.
-houghDirectory: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 houghDirectory
-.PHONY : houghDirectory
+dropletFinder: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dropletFinder
+.PHONY : dropletFinder
 
 # fast build rule for target.
-houghDirectory/fast:
-	$(MAKE) -f CMakeFiles/houghDirectory.dir/build.make CMakeFiles/houghDirectory.dir/build
-.PHONY : houghDirectory/fast
+dropletFinder/fast:
+	$(MAKE) -f CMakeFiles/dropletFinder.dir/build.make CMakeFiles/dropletFinder.dir/build
+.PHONY : dropletFinder/fast
 
-houghDirectory.o: houghDirectory.cpp.o
-.PHONY : houghDirectory.o
+dropletFinder.o: dropletFinder.cpp.o
+.PHONY : dropletFinder.o
 
 # target to build an object file
-houghDirectory.cpp.o:
-	$(MAKE) -f CMakeFiles/houghDirectory.dir/build.make CMakeFiles/houghDirectory.dir/houghDirectory.cpp.o
-.PHONY : houghDirectory.cpp.o
+dropletFinder.cpp.o:
+	$(MAKE) -f CMakeFiles/dropletFinder.dir/build.make CMakeFiles/dropletFinder.dir/dropletFinder.cpp.o
+.PHONY : dropletFinder.cpp.o
 
-houghDirectory.i: houghDirectory.cpp.i
-.PHONY : houghDirectory.i
+dropletFinder.i: dropletFinder.cpp.i
+.PHONY : dropletFinder.i
 
 # target to preprocess a source file
-houghDirectory.cpp.i:
-	$(MAKE) -f CMakeFiles/houghDirectory.dir/build.make CMakeFiles/houghDirectory.dir/houghDirectory.cpp.i
-.PHONY : houghDirectory.cpp.i
+dropletFinder.cpp.i:
+	$(MAKE) -f CMakeFiles/dropletFinder.dir/build.make CMakeFiles/dropletFinder.dir/dropletFinder.cpp.i
+.PHONY : dropletFinder.cpp.i
 
-houghDirectory.s: houghDirectory.cpp.s
-.PHONY : houghDirectory.s
+dropletFinder.s: dropletFinder.cpp.s
+.PHONY : dropletFinder.s
 
 # target to generate assembly for a file
-houghDirectory.cpp.s:
-	$(MAKE) -f CMakeFiles/houghDirectory.dir/build.make CMakeFiles/houghDirectory.dir/houghDirectory.cpp.s
-.PHONY : houghDirectory.cpp.s
+dropletFinder.cpp.s:
+	$(MAKE) -f CMakeFiles/dropletFinder.dir/build.make CMakeFiles/dropletFinder.dir/dropletFinder.cpp.s
+.PHONY : dropletFinder.cpp.s
 
 # Help Target
 help:
@@ -146,10 +146,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... houghDirectory"
-	@echo "... houghDirectory.o"
-	@echo "... houghDirectory.i"
-	@echo "... houghDirectory.s"
+	@echo "... dropletFinder"
+	@echo "... dropletFinder.o"
+	@echo "... dropletFinder.i"
+	@echo "... dropletFinder.s"
 .PHONY : help
 
 
