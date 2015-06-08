@@ -31,7 +31,7 @@ finally:
 
 A = asarray(A)
 B = asarray(B)
-with open('MSE.txt', 'a') as new:
+with open('sytheticImagesMSE.txt', 'a') as new:
 	MSE =  (sum((A-B)**2))/(size(A))
 	print str(MSE)
 	new.write("MSE for Sythetic Sequence 5: ")
