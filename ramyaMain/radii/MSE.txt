@@ -1,0 +1,5 @@
+MSE for Sythetic Sequence 1: 1.6778923497
+MSE for Sythetic Sequence 2: 1.14324914258
+MSE for Sythetic Sequence 3: 1.15417832407
+MSE for Sythetic Sequence 4: 84.8157606091
+MSE for Sythetic Sequence 5: 41507.923968

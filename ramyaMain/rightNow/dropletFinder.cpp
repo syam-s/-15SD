@@ -128,10 +128,11 @@ int main()
           files[i] != "CMakeFiles" && files[i] != "CMakeLists.txt" && 
           files[i] != "dropletFinder" && files[i] != "dropletFinder.cpp" && 
           files[i] != "Makefile" && files[i] != "HowTo.txt"){
-
-        myFile << mainHough(files[i].c_str(), j) << endl;
-        cout << j << endl;
-        j++;
+        if (mainHough(files[i].c_str(), j) != (-1)){
+          myFile << mainHough(files[i].c_str(), j) << endl;
+           cout << j << endl;
+           j++;
+        }
       }
     }
 
@@ -141,10 +142,8 @@ int main()
     }
     else{
       cout << "Run Finished." << std::endl;
-     // ofstream MSE("../radii/mse2.csv", ios::out);
     }
     
-
     myFile.close();
 
     return 0;
