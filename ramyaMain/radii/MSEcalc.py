@@ -10,7 +10,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 
 file1 = open("dropletSizeVsFrameNumber.csv", 'rU')
-file2 = open("radii5.csv", 'rU')
+file2 = open("radii3.csv", 'rU')
 A = []
 B = []
 try:
@@ -34,7 +34,7 @@ B = asarray(B)
 with open('sytheticImagesMSE.txt', 'a') as new:
 	MSE =  (sum((A-B)**2))/(size(A))
 	print str(MSE)
-	new.write("MSE for Sythetic Sequence 5: ")
+	new.write("MSE for Sythetic Sequence 3: ")
 	new.write(str(MSE))
 	new.write("\n")
 
